@@ -1,9 +1,9 @@
 public class ejercicio8 {
-    static void main() {
+    public static void main(String[] args) {
         valorAbsoluto(-100);
     }
 
-    static void valorAbsoluto(int num1) {
+    public static void valorAbsoluto(int num1) {
         if (num1 < 0){
             num1 = num1 * -1;
         }

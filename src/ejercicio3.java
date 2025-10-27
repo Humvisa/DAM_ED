@@ -1,8 +1,8 @@
 public class ejercicio3 {
-    static void main() {
+    public static void main(String[] args) {
         saludar("juan", 16);
     }
-    static void saludar(String nombre, int edad) {
+    public static void saludar(String nombre, int edad) {
         System.out.println("hola " + nombre +" con años " + edad);
 
     }

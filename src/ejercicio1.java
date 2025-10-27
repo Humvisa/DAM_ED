@@ -1,9 +1,8 @@
 public class ejercicio1 {
-    static void saludar() {
+    public static void saludar() {
         System.out.println("HOLAAAAAAAAAA");
     }
-
-    static void main() {
+    public static void main(String[] args) {
         saludar();
         saludar();
         saludar();
