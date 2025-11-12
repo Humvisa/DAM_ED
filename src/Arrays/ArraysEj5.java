@@ -21,3 +21,4 @@ public class ArraysEj5 {
         System.out.println("Array Random " + Arrays.toString(array));
     }
 }
+// es con doble for
