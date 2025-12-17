@@ -16,7 +16,6 @@ public class arraysej8 {
         int[][] filas = {fila1, fila2, fila3, fila4, fila5};
 
         int[] sumaFilas = {0,0,0,0,0};
-
         for (int i = 0; i < filas.length; i++) {
             for (int j = 0; j < filas[i].length; j++) {
                 sumaFilas[i] += filas[i][j];
@@ -24,8 +23,8 @@ public class arraysej8 {
             }
         System.out.println("la suma de las filas es " + Arrays.toString(sumaFilas));
 
-
         int[][] columnas = {fila1,fila2,fila3,fila4,fila5};
+
         int[] sumaColumnas = {0,0,0,0,0};
             for (int j = 0; j <  columnas.length; j++) {
                 for ( int k = 0; k < columnas[0].length; k++) {
@@ -33,5 +32,17 @@ public class arraysej8 {
                 }
             }
         System.out.println("la suma de columnas es " + Arrays.toString(sumaColumnas));
+
+            int[][] diagonales = {fila1,fila2,fila3,fila4,fila5};
+
+            int[] sumaDiagonales = {0,0};
+                for ( int j = 0; j < fila1.length; j++) {
+                        sumaDiagonales[0] += diagonales[j][j];
+                }
+                int contador = 4;
+                for (int i = 0; i < fila1.length; i++) {
+                        sumaDiagonales[1] += diagonales[i][contador--];
+                }
+        System.out.println("la suma de diagonales son " + Arrays.toString(sumaDiagonales));
     }
 }

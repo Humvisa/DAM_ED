@@ -15,17 +15,25 @@ public class ArraysEj5 {
             array[i] = numeroRandom;
         }
         System.out.println("Array Random " + Arrays.toString(array));
-        boolean esta = true;
         int contador = 0;
-            for (int j = 0; j < 50; j++) {
-                if (contador == array[j]) {
-                    System.out.println(contador);
-                    contador++;
+        int contador2 = 0;
+        boolean esta = true;
+        int[] excluidos = new int[99];
+        for (int j = 0; j < 99; j++) {
+            for (int i = 0; i < array.length; i++) {
+                if (j == array[i]){
+                    esta = true;
+                } else {
+                    esta = false;
+                    contador = array[i];
                 }
-                else {
-
-                }
+            }
+            if (!esta){
+                excluidos[contador2] = contador;
+                contador2++;
+            }
         }
+        System.out.println("Excluidos " + Arrays.toString(excluidos));
     }
 }
-// es con doble for
+// demasiado complicao
