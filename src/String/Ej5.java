@@ -8,8 +8,11 @@ package String;
 public class Ej5 {
     public static void main(String[] args) {
     double num = 2388432.34;
-    StringBuilder numero = new StringBuilder();
-    numero = numero.append(num);
-    System.out.println(numero);
+        System.out.println(cadena(num));
+    }
+
+    public static String cadena(double numero) {
+        String texto = String.valueOf(numero);
+    return texto.charAt(0)+ ","+texto.substring(1,4)+","+texto.substring(4);
     }
 }

@@ -9,7 +9,7 @@ public class Ej3 {
         String palabra = "Lunes";
         StringBuilder cambiado = new StringBuilder();
         for (int i = 0; i < palabra.length(); i++) {
-            int ascii = (int) palabra.charAt(i);
+            int ascii = palabra.charAt(i);
             cambiado.append((char) (ascii +1));
         }
         System.out.println(cambiado);

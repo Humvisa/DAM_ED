@@ -6,6 +6,17 @@ package String;
 //Da como salida: true
 public class Ej6 {
     public static void main(String[] args) {
+    String palabra = "reconocer";
+        System.out.println("la palabra "+palabra+ " es palindroma? "+palindroma(palabra));
+    }
 
+    public static boolean palindroma(String palabra) {
+        int contador = palabra.length()-1;
+        for (int i = 0; i < palabra.length()/2; i++) {
+            if (palabra.charAt(i) != palabra.charAt(contador--)){
+                return false;
+            }
+        }
+        return true;
     }
 }

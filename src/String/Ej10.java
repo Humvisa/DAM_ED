@@ -8,20 +8,38 @@ import java.util.Scanner;
 public class Ej10 {
     public static void main(String[] args) {
         String palabra = "estrella";
-        StringBuilder aciertos = new StringBuilder();
-        for (int i = 0; i < palabra.length(); i++) {
-            aciertos.append("_");
-        }
         Scanner sc = new Scanner(System.in);
-        System.out.println(aciertos);
-        for (int contador = 8; contador > 0; contador--) {
-            String letra = sc.nextLine();
-            if (palabra.contains(letra)) {
-                System.out.println(aciertos);
-            }else{
-                System.out.println("te quedan " + contador + " vidas");
-            }
+        if (ahorcado(palabra, sc)) {
+            System.out.println("ganaste");
+        }else  {
+            System.out.println("perdiste");
         }
         sc.close();
+    }
+
+    public static boolean ahorcado(String palabra, Scanner sc) {
+        StringBuilder codificado = new StringBuilder();
+        int vidas = 8;
+        for (int i = 0; i < palabra.length(); i++) {
+            codificado.append("_");
+        }
+        System.out.println(codificado);
+        while (vidas > 0) {
+            boolean acierto = false;
+            char letra = sc.next().charAt(0);
+            for (int i = 0; i < palabra.length(); i++) {
+                if (palabra.charAt(i) == letra) {
+                    codificado.setCharAt(i, letra);
+                    acierto = true;
+                }
+            }
+            if (!acierto) {vidas--;}
+            System.out.println("tienes " + vidas + " vidas");
+            System.out.println(codificado);
+            if (palabra.equals(codificado.toString())) {
+                return true;
+            }
+        }
+        return false;
     }
 }
