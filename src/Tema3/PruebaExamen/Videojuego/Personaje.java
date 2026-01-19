@@ -24,10 +24,10 @@ public class Personaje {
         this.puntosVida = 100;
     }
     public void recibirDanio(int danio){
-        int danioMagico = ((danio * 20)/100);
+        int danioMagico = danio * 80 /100;
         if(this.esMagico) {
             this.puntosVida -= danioMagico;
-            System.out.println(" ha recibido " + danioMagico + " de daño");
+            System.out.println(this.nombre + " ha recibido " + danioMagico + " de daño");
         }else {
             this.puntosVida -= danio;
             System.out.println(this.nombre + " ha recibido " + danio + " de daño");
