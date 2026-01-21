@@ -1,8 +1,22 @@
 package Tema3.BatallaDeRobots;
 
 import java.util.Random;
+//Crea la clase Robot.
+//Requisitos de la Clase:
+//Atributos (Privados):
+//nombre (String).
+//modelo (String).
+//vida (double): Empieza en 100.0 (tope máximo).
+//potenciaAtaque (double): Valor entre 10 y 20.
+//blindaje (double): Valor entre 0 y 10 (reduce el daño recibido).
+//Constructores:
+//Constructor principal que recibe nombre y modelo. La vida se fija a 100.
+//La potenciaAtaque y el blindaje deben generarse aleatoriamente dentro del constructor respetando los rangos indicados.
+//Métodos:
+//mostrarEstadisticas(): Imprime nombre, vida, ataque y defensa con formato bonito (puedes usar printf ).
+//recibirDano(double cantidad):
 //El daño real es cantidad - blindaje.
-//Si el daño real es menor que 0, no pierde vida (el blindaje lo paró todo). // o igual a 0 ??????
+//Si el daño real es menor que 0, no pierde vida (el blindaje lo paró todo).
 //Restar daño real a la vida. Si la vida baja de 0, se queda en 0.
 //atacar(Robot enemigo):
 //Este método recibe otro objeto Robot como parámetro.
@@ -56,7 +70,20 @@ public class Robot {
         System.out.println("el enemigo " + enemigo.nombre + " ya esta vencido");
         }
     if (this.vida > 0 && enemigo.vida > 0){
-
+        enemigo.recibirDano(this.potenciaAtaque);
+        }
     }
+    public boolean estaVivo(){
+        if (this.vida>0){
+            return true;
+        }else {
+            return false;
+        }
+    }
+    public double getVida(){
+        return this.vida;
+    }
+    public String getNombre(){
+        return this.nombre;
     }
 }
