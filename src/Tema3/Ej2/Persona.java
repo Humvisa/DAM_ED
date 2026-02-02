@@ -10,14 +10,14 @@ public class Persona {
 
     public Persona(String nombre) {
         this.nombre = nombre;
-        this.dni = generarDNI().toString();
+        this.dni = generarDNI();
     }
 
     public Persona(String nombre, int edad, char sexo) {
         this.nombre = nombre;
         this.edad = edad;
         this.sexo = comprobarSexo(sexo);
-        this.dni = generarDNI().toString();
+        this.dni = generarDNI();
     }
 
     public Persona(String nombre, int edad, char sexo, double peso, double altura) {
@@ -26,7 +26,7 @@ public class Persona {
         this.sexo = comprobarSexo(sexo); //para aplicar bien la comprobacion use chatgpt
         this.peso = peso;
         this.altura = altura;
-        this.dni = generarDNI().toString();
+        this.dni = generarDNI();
     }
     public int calcularIMC(){
         if (peso == 0 || altura == 0){
@@ -55,7 +55,7 @@ public class Persona {
     public String toString(){
         return "el nombre es: "+ nombre + " edad: "+ edad + " sexo: "+ sexo + " peso: "  + peso + " altura: "+ altura + " DNI: "+ dni;
     }
-    private StringBuilder generarDNI(){
+    private String generarDNI(){
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < 8 ; i++) {
             int digito = (int) (Math.random() * 10);
@@ -64,7 +64,7 @@ public class Persona {
         int numero = Integer.parseInt(sb.toString());
         String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
         sb.append(letras.charAt(numero%23));
-        return sb;
+        return sb.toString();
     }
 
     public String getNombre() {
