@@ -34,7 +34,7 @@ public class Proyecto {
 
     public static void fechas(LocalDate hoy){
     LocalDate fechaInicio = hoy.plusDays(1);
-    if (hoy.equals(DayOfWeek.FRIDAY){
+    if (hoy.equals(DayOfWeek.FRIDAY)){
         fechaInicio.plusDays(2);
     } else if (hoy.equals(DayOfWeek.SATURDAY) ) {
         fechaInicio.plusDays(1);
