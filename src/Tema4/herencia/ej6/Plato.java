@@ -17,4 +17,4 @@ public abstract class Plato {
     public String toString() {
         return this.nombre + " precio: " + this.precio +"€";
     }
-}
+}   
