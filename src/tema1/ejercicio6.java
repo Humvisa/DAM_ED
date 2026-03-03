@@ -1,3 +1,5 @@
+package tema1;
+
 public class ejercicio6 {
     public static void main(String[] args) {
         mayor(80, 81, 79);

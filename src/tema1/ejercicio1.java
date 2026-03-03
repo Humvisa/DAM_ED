@@ -1,3 +1,5 @@
+package tema1;
+
 public class ejercicio1 {
     public static void saludar() {
         System.out.println("HOLAAAAAAAAAA");

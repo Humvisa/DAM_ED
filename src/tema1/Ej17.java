@@ -1,4 +1,4 @@
-//17.  Desarrolla un programa que averigüe cuantas asignaturas tiene aprobadas un alumno.
+package tema1;//17.  Desarrolla un programa que averigüe cuantas asignaturas tiene aprobadas un alumno.
 // El programa debe leer un String con el nombre de las asignaturas y después otro String con la lista de sus notas.
 // Debe dar como resultado el nombre de las asignaturas aprobadas. Tanto la lista de asignaturas como la lista de notas utilizan el símbolo “:” como separador.
 //Ejemplo de funcionamiento del programa:

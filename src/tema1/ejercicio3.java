@@ -1,3 +1,5 @@
+package tema1;
+
 public class ejercicio3 {
     public static void main(String[] args) {
         saludar("juan", 16);
