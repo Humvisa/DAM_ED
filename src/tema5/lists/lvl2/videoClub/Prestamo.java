@@ -1,14 +1,12 @@
 package tema5.lists.lvl2.videoClub;
 
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.Locale;
 
-public class Prestamo {
+public class Prestamo extends VideoClub{
     Pelicula pelicula;
     Cliente cliente;
     LocalDate fecha;
-    int fechaDev = 2;
+    LocalDate fechaDev = fecha.plusDays(2);
 
     public Prestamo(Pelicula pelicula, Cliente cliente) {
         this.pelicula = pelicula;
@@ -36,11 +34,11 @@ public class Prestamo {
         return fecha;
     }
 
-    public int getFechaDev() {
+    public LocalDate getFechaDev() {
         return fechaDev;
     }
 
-    public void setFechaDev(int fechaDev) {
+    public void setFechaDev(LocalDate fechaDev) {
         this.fechaDev = fechaDev;
     }
 }

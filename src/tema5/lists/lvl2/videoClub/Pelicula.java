@@ -1,6 +1,6 @@
 package tema5.lists.lvl2.videoClub;
 
-public class Pelicula {
+public class Pelicula extends VideoClub{
     int codigo;
     String titulo;
 

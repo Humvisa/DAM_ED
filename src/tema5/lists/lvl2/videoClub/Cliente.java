@@ -1,6 +1,6 @@
 package tema5.lists.lvl2.videoClub;
 
-public class Cliente {
+public class Cliente extends VideoClub{
     int carnet;
     String nombre;
 
