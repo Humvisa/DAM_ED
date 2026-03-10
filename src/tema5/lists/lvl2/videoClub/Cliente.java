@@ -24,4 +24,12 @@ public class Cliente extends VideoClub{
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "carnet=" + carnet +
+                ", nombre='" + nombre + '\'' +
+                '}';
+    }
 }

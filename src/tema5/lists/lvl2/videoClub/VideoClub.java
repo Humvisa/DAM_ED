@@ -47,7 +47,7 @@ public class VideoClub {
 
         System.out.println(buscarPelicula(1).getTitulo());
         System.out.println(buscarCliente(1).getNombre());
-        System.out.println(getPrestamos().toString());
+        System.out.println(getPrestamos());
         System.out.println(getPrestamos(1).fecha);
     }
     public static void añadirCliente(Cliente cliente){
@@ -94,5 +94,8 @@ public class VideoClub {
             }
         }
         return true;
+    }
+    public static List prestamosMorosos(){
+        return null;
     }
 }

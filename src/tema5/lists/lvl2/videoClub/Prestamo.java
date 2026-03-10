@@ -6,7 +6,7 @@ public class Prestamo extends VideoClub{
     Pelicula pelicula;
     Cliente cliente;
     LocalDate fecha;
-    LocalDate fechaDev = fecha.plusDays(2);
+    LocalDate fechaDev = (LocalDate.now().plusDays(2));
 
     public Prestamo(Pelicula pelicula, Cliente cliente) {
         this.pelicula = pelicula;
@@ -40,5 +40,15 @@ public class Prestamo extends VideoClub{
 
     public void setFechaDev(LocalDate fechaDev) {
         this.fechaDev = fechaDev;
+    }
+
+    @Override
+    public String toString() {
+        return "Prestamo{" +
+                "pelicula= " + pelicula +
+                ", cliente= " + cliente +
+                ", fecha= " + fecha +
+                ", fechaDev= " + fechaDev +
+                '}';
     }
 }

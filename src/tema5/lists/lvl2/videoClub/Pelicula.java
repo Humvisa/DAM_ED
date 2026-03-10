@@ -20,4 +20,12 @@ public class Pelicula extends VideoClub{
     public String getTitulo() {
         return titulo;
     }
+
+    @Override
+    public String toString() {
+        return "Pelicula{" +
+                "codigo=" + codigo +
+                ", titulo='" + titulo + '\'' +
+                '}';
+    }
 }
