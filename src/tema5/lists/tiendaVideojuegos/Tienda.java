@@ -2,6 +2,7 @@ package tema5.lists.tiendaVideojuegos;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Formattable;
 import java.util.List;
 import java.util.UUID;
 //0 ia usada (emoji de carita con gafas de sol).
@@ -108,6 +109,11 @@ public class Tienda {
     }
     //Extras -------------------------------------------------------------------------------------------------------------
     public static List ventasPlataforma(String plataforma){
+        for (Videojuegos juego : videojuegos){
+            if (juego.plataforma.equals(plataforma)){
+
+            }
+        }
         return null;
     }
 
