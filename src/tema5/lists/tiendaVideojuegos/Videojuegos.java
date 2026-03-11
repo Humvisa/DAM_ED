@@ -1,5 +1,6 @@
 package tema5.lists.tiendaVideojuegos;
 
+import java.util.Objects;
 import java.util.UUID;
 
 public class Videojuegos extends Tienda{
@@ -28,5 +29,17 @@ public class Videojuegos extends Tienda{
                 ", stock=" + stock +
                 ", id=" + id +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Videojuegos that = (Videojuegos) o;
+        return Objects.equals(titulo, that.titulo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(titulo);
     }
 }
