@@ -118,6 +118,7 @@ public class Tienda {
         return ventas;
     }
     public static void ventasFecha(LocalDate fecha){
+        System.out.println("enseñando las ventas del dia: " + fecha + "-----------------------------------");
         for (Ventas venta: ventas){
             if (venta.fechaVenta.equals(fecha)){
                 System.out.println(venta.toString());
@@ -130,7 +131,7 @@ public class Tienda {
     //Mostrar el título más vendido.
     //Mostrar el mejor día de ventas.
     public static void ventasPlataforma(){
-        System.out.println("Ventas por plataforma ------------------------");
+        System.out.println("Ventas por plataforma --------------------------------------------------------");
         int contador = 0;
         HashSet<String> plataformas = new HashSet<>();
         for (Ventas actual : ventas){
@@ -147,7 +148,7 @@ public class Tienda {
         }
     }
     public static void ventasGenero(){
-        System.out.println("Ventas por Genero -------------------------------");
+        System.out.println("Ventas por Genero ---------------------------------------------------");
         int contador = 0;
         HashSet<String> generos = new HashSet<>();
         for (Videojuegos actual : videojuegos){
@@ -164,7 +165,7 @@ public class Tienda {
         }
     }
     public static void titMasVendido(){
-        System.out.println("Titulo mas vendido ----------------------------------");
+        System.out.println("Titulo mas vendido -----------------------------------------------------");
         int contador = 0;
         int indice = 0;
         List<String> titulo = new ArrayList<>();
@@ -192,7 +193,7 @@ public class Tienda {
     }
 
     public static void diaVentas(){
-        System.out.println("Dia con mas Ventas ----------------------------------");
+        System.out.println("Dia con mas Ventas --------------------------------------------------");
         int contador = 0;
         int indice = 0;
         List<LocalDate> venta = new ArrayList<>();

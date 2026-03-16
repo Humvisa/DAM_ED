@@ -1,7 +1,7 @@
 package Tema3.PruebaExamen.Gestion;
 //Gestión de Inventario
 //
-//Crea una clase Producto con:
+//Crea una clase tema5.lists.electroAvila.Producto con:
 //
 //Atributos: nombre (String), precio (double) y stock (int).
 //Un constructor que reciba los tres parámetros.
