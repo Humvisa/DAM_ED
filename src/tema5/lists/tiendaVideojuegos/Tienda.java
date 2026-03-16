@@ -7,14 +7,17 @@ import java.util.List;
 import java.util.UUID;
 //0 ia usada (emoji de carita con gafas de sol).
 public class Tienda {
-    static LocalDate hoy = LocalDate.now();
+    static LocalDate fecha1 = LocalDate.of(2020, 03,14);
+    static LocalDate fecha2 = LocalDate.of(2022, 5,24);
+    static LocalDate fecha3 = LocalDate.of(2025, 8,9);
+
     static List<Videojuegos> videojuegos = new ArrayList<>();
     static List<Clientes> clientes = new ArrayList<>();
     static List<Ventas> ventas = new ArrayList<>();
     public static void main(String[] args) {
         Videojuegos minecraft = new Videojuegos("Minecraft", "Todas", "Sandbox", 20.00,30);
         Clientes cliente1 = new Clientes("Humberto", "Villegas", "MiKasa", "humvisa@gmail.com", 1);
-        Ventas venta1 = new Ventas(cliente1, minecraft, hoy);
+        Ventas venta1 = new Ventas(cliente1, minecraft, fecha1);
         Videojuegos fortnite = new Videojuegos("Fortnite", "PS", "TPS", 0, 1000);
         addToInventary(minecraft);
         addToInventary(fortnite);
@@ -26,14 +29,16 @@ public class Tienda {
         System.out.println(buscarCliente1("Villegas"));
         System.out.println(buscarCliente2("humvisa@gmail.com"));
         registrarVenta(venta1);
-        registrarVenta(new Ventas(cliente1,  fortnite,  hoy));
-        registrarVenta(new Ventas(cliente1, minecraft, hoy));
-        registrarVenta(new Ventas(cliente1, minecraft, hoy));
+        registrarVenta(new Ventas(cliente1,  fortnite,  fecha1));
+        registrarVenta(new Ventas(cliente1, fortnite, fecha2));
+        registrarVenta(new Ventas(cliente1, fortnite, fecha3));
         System.out.println(historialVentas());
-        ventasFecha(hoy);
-        titMasVendido();
+        ventasFecha(fecha1);
+
         ventasPlataforma();
         ventasGenero();
+        titMasVendido();
+        diaVentas();
 
 
     }
@@ -72,6 +77,7 @@ public class Tienda {
         }
     }
     public static Clientes buscarCliente(String nombre){
+        System.out.println("Buscando cliente por nombre -----------------------------------");
         for (Clientes cliente : clientes){
             if (cliente.nombre.equals(nombre)){
                 return cliente;
@@ -80,6 +86,8 @@ public class Tienda {
         return null;
     }
     public static Clientes buscarCliente1(String apellido){
+        System.out.println("Buscando cliente por apellido -----------------------------------");
+
         for (Clientes cliente : clientes){
             if (cliente.apellido.equals(apellido)){
                 return cliente;
@@ -88,6 +96,8 @@ public class Tienda {
         return null;
     }
     public static Clientes buscarCliente2(String email){
+        System.out.println("Buscando cliente por correo -----------------------------------");
+
         for (Clientes cliente : clientes){
             if (cliente.email.equals(email)){
                 return cliente;
@@ -104,6 +114,7 @@ public class Tienda {
         }
     }
     public static List historialVentas(){
+        System.out.println("Historial de Ventas -------------------------------------------");
         return ventas;
     }
     public static void ventasFecha(LocalDate fecha){
@@ -155,19 +166,56 @@ public class Tienda {
     public static void titMasVendido(){
         System.out.println("Titulo mas vendido ----------------------------------");
         int contador = 0;
-        HashSet<String> titulo = new HashSet<>();
-        for (Videojuegos actual : videojuegos){
-            titulo.add(actual.titulo);
+        int indice = 0;
+        List<String> titulo = new ArrayList<>();
+        List<Integer> titulo2 = new ArrayList<>();
+        for (Ventas actual : ventas){
+            titulo.add(actual.juegos.titulo);
         }
-        List<String> titulosOrdenados = new ArrayList<>();
         for (String actual : titulo){
-            titulosOrdenados.add(actual);
+            for (Ventas actual2 : ventas){
+                if (actual.equals(actual2.juegos.titulo)){
+                    contador++;
+                }
+            }
+            titulo2.add(contador);
+            contador = 0;
         }
-        for (int i = 0; i < titulosOrdenados.size(); i++){
-
+        for (int i = 0; i < titulo2.size(); i++){
+            contador = titulo2.get(0);
+            if (contador <= titulo2.get(i)){
+                contador = titulo2.get(i);
+                indice = i;
+            }
         }
-
-
+        System.out.println(titulo.get(indice)+ " con: " +titulo2.get(indice) + " ventas");
     }
 
+    public static void diaVentas(){
+        System.out.println("Dia con mas Ventas ----------------------------------");
+        int contador = 0;
+        int indice = 0;
+        List<LocalDate> venta = new ArrayList<>();
+        List<Integer> venta2 = new ArrayList<>();
+        for (Ventas actual : ventas){
+            venta.add(actual.fechaVenta);
+        }
+        for (LocalDate actual : venta){
+            for (Ventas actual2 : ventas){
+                if (actual.equals(actual2.fechaVenta)){
+                    contador++;
+                }
+            }
+            venta2.add(contador);
+            contador = 0;
+        }
+        for (int i = 0; i < venta2.size(); i++){
+            contador = venta2.get(0);
+            if (contador <= venta2.get(i)){
+                contador = venta2.get(i);
+                indice = i;
+            }
+        }
+        System.out.println(venta.get(indice)+ " con: " +venta2.get(indice) + " ventas");
+    }
 }
