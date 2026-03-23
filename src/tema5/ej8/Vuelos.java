@@ -56,14 +56,6 @@ public class Vuelos {
 
         // TODO - Generar un set con los identificadores de los vuelos
         System.out.println(getIdentificadoresVuelos(vuelosPasajerosCoste));
-        Set<String> iVuelos = new HashSet<>();
-        iVuelos.add("pasajerosAF890");
-        iVuelos.add("pasajerosFR456");
-        iVuelos.add("pasajerosIB123");
-        iVuelos.add("pasajerosLH789");
-        iVuelos.add("pasajerosVY234");
-        iVuelos.add("pasajerosUX567");
-
         // TODO - Mostrar el precio del billete más caro
         System.out.printf(
             "El billete más caro ha sido de %.2f %n",
@@ -83,16 +75,16 @@ public class Vuelos {
         );
     }
 
-    public static Set<String> getIdentificadoresVuelos(
-        Map<String, Map<String, Double>> vuelosPasajerosCoste
-    ) {
-        // TODO
-        return null;
+    public static Set<String> getIdentificadoresVuelos(Map<String, Map<String, Double>> vuelosPasajerosCoste) {
+        Set<String> ide = new HashSet<>();
+        for (String actual : vuelosPasajerosCoste.keySet()){
+         ide.add(actual);}
+        return ide;
     }
 
     public static Double getBilleteMasCaro(Map<String, Map<String, Double>> vuelosPasajerosCoste) {
-        // TODO
-        //Comparator<Double> comparator = Comparator.comparingDouble(Map::);
+        double precio = 0;
+       // Comparator<Double> comparator
         return 0.0;
     }
 
